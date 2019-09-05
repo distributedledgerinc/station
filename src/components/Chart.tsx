@@ -6,15 +6,23 @@ import { times } from '../api/math'
 import { format } from '../utils'
 
 type ChartType = 'doughnut' | 'line'
-type Props = {
+export interface Props {
   type: ChartType
   labels?: string[]
-  data: number[] | ChartPoint[]
+  data?: number[] | ChartPoint[]
+  stackedData?: ChartPoint[][]
   width?: number
   height: number
 }
 
-const Chart = ({ type, labels, data, height, ...props }: Props) => {
+const Chart = ({
+  type,
+  labels,
+  data,
+  stackedData,
+  height,
+  ...props
+}: Props) => {
   /* DOM Size */
   const containerRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState<number>(props.width || 0)
@@ -35,25 +43,35 @@ const Chart = ({ type, labels, data, height, ...props }: Props) => {
     const initChart = (ctx: CanvasRenderingContext2D) => {
       ctx.canvas.width = width
       ctx.canvas.height = height
-      const chart = new ChartJS(ctx, getOptions(type))
+      const chart = new ChartJS(
+        ctx,
+        getOptions(type, stackedData ? stackedData.length : 1)
+      )
       setChart(chart)
     }
 
     const canvas = canvasRef.current
     const ctx = canvas && canvas.getContext('2d')
     width && ctx && initChart(ctx)
-  }, [width, height, type])
+  }, [width, height, type, stackedData])
 
   /* Update chart */
   useEffect(() => {
     const updateChart = (chart: ChartJS) => {
       labels && (chart.data.labels = labels)
-      chart.data.datasets && (chart.data.datasets[0].data = data)
+      data && chart.data.datasets && (chart.data.datasets[0].data = data)
+      stackedData &&
+        stackedData.forEach(
+          (data, index) =>
+            chart.data.datasets &&
+            chart.data.datasets[index] &&
+            (chart.data.datasets[index].data = data)
+        )
       chart.update()
     }
 
     chart && updateChart(chart)
-  }, [chart, labels, data])
+  }, [chart, labels, data, stackedData])
 
   return (
     <div ref={containerRef}>
@@ -66,7 +84,7 @@ export default Chart
 
 /* Chart.js */
 const BLUE = '#2043b5'
-const getOptions = (type: ChartType): ChartConfiguration => {
+const getOptions = (type: ChartType, length: number): ChartConfiguration => {
   /* Dataset Properties */
   const defaultProps = {
     borderWidth: 1
@@ -165,7 +183,9 @@ const getOptions = (type: ChartType): ChartConfiguration => {
 
   return {
     type,
-    data: { datasets: [{ ...defaultProps, ...props }] },
+    data: {
+      datasets: Array.from({ length }, _ => ({ ...defaultProps, ...props }))
+    },
     options: Object.assign({}, defaultOptions, options)
   }
 }
