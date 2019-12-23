@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import c from 'classnames'
 import { format } from '../../utils'
 import Card from '../../components/Card'
@@ -9,6 +10,7 @@ import s from './Tx.module.scss'
 
 const Tx = (tx: Tx) => {
   const { timestamp, txhash, txFee, memo, success, msgs, errorMessage } = tx
+  const { t } = useTranslation()
 
   const renderTitle = () => (
     <>
@@ -38,9 +40,9 @@ const Tx = (tx: Tx) => {
   }
 
   const details = [
-    ['Tx fee', txFee ? txFee.map(format.coin).join(', ') : '0'],
-    ['Memo', memo],
-    ['Log', errorMessage]
+    [t('Tx fee'), txFee ? txFee.map(format.coin).join(', ') : '0'],
+    [t('Memo'), memo],
+    [t('Log'), errorMessage]
   ]
 
   const renderDetail = ([title, content]: string[]) =>

@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react'
+import { useTranslation } from 'react-i18next'
 import c from 'classnames'
 import { useForm, useAuth } from '../../../hooks'
 import Divider from '../../../components/Divider'
@@ -24,6 +25,7 @@ const OptionsList = [
 ]
 
 const Vote = ({ id, onSubmitting, onSubmit }: Props) => {
+  const { t } = useTranslation()
   const { address } = useAuth()
 
   /* validation */
@@ -58,7 +60,7 @@ const Vote = ({ id, onSubmitting, onSubmit }: Props) => {
     >
       {!isSubmitted ? (
         <form onSubmit={submit}>
-          <h1>Vote</h1>
+          <h1>{t('Vote')}</h1>
 
           <section className={s.options}>
             {OptionsList.map(({ key, label, className }) => {
@@ -91,7 +93,7 @@ const Vote = ({ id, onSubmitting, onSubmit }: Props) => {
             disabled={invalid}
             className="btn btn-block btn-primary"
           >
-            Next
+            {t('Next')}
           </button>
         </form>
       ) : (

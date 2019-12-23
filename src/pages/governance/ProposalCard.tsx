@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import c from 'classnames'
 import { percent } from '../../api/math'
 import { format } from '../../utils'
@@ -12,6 +13,7 @@ import VoteChart from './VoteChart'
 import s from './ProposalCard.module.scss'
 
 const ProposalCard = (proposal: ProposalItem) => {
+  const { t } = useTranslation()
   const { id, status, title, proposer, submitTime, deposit, vote } = proposal
 
   const renderDetail = ([title, content]: ReactNode[]) => (
@@ -50,7 +52,7 @@ const ProposalCard = (proposal: ProposalItem) => {
 
           <h1 className={s.title}>{title}</h1>
           <p className={s.meta}>
-            Submitted by{' '}
+            {t('Submitted by ')}
             <strong>
               {proposer.moniker ??
                 format.truncate(proposer.accountAddress, [5, 5])}
