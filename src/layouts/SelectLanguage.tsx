@@ -1,4 +1,5 @@
 import React from 'react'
+import c from 'classnames'
 import LanguageList, { Languages } from '../lang/list'
 import { useApp } from '../hooks'
 import Pop from '../components/Pop'
@@ -8,12 +9,13 @@ import s from './SelectLanguage.module.scss'
 interface LangProps {
   icon: string
   label: string
+  className?: string
   caret?: boolean
   active?: boolean
 }
 
-const Lang = ({ icon, label, caret, active }: LangProps) => (
-  <div className={s.lang}>
+const Lang = ({ icon, label, caret, active, className }: LangProps) => (
+  <div className={c(s.lang, className)}>
     <section>
       <img src={icon} alt="" width={18} />
       {label}
@@ -55,7 +57,7 @@ const SelectLanguage = () => {
       >
         {({ ref, getAttrs }) => (
           <span {...getAttrs({ className: s.wrapper })} ref={ref}>
-            <Lang {...Languages[lang]} caret />
+            <Lang {...Languages[lang]} caret className={s.select} />
           </span>
         )}
       </Pop>

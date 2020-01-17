@@ -10,7 +10,7 @@ import s from './Tx.module.scss'
 
 const Tx = (tx: Tx) => {
   const { timestamp, txhash, txFee, memo, success, msgs, errorMessage } = tx
-  const { t } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   const renderTitle = () => (
     <>
@@ -31,7 +31,7 @@ const Tx = (tx: Tx) => {
       <article className={s.message} key={index}>
         {tag && (
           <Badge className={c(s.tag, badgeClassName)} small>
-            {tag}
+            {i18n.languages?.includes('en') ? tag : t(tag.toLowerCase())}
           </Badge>
         )}
         <p className={s.text}>{text}</p>

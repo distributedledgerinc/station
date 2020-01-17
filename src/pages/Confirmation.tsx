@@ -173,7 +173,7 @@ const Form = (props: Props & { balance: Balance[] }) => {
         setIsSubmitted(true)
       } catch (error) {
         error.message === 'Incorrect password'
-          ? setIncorrect('Incorrect password')
+          ? setIncorrect(t('Incorrect password'))
           : error.message && error.message.includes('Signing failed: ')
           ? setLedgerError(error.message)
           : handleError(error)
@@ -227,7 +227,7 @@ const Form = (props: Props & { balance: Balance[] }) => {
   }
 
   return errorMessage ? (
-    <Confirm icon="error_outline" title="Fail" actions={actions}>
+    <Confirm icon="error_outline" title={t('Fail')} actions={actions}>
       {errorMessage}
     </Confirm>
   ) : isSimulating ? (

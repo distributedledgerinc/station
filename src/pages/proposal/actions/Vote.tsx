@@ -20,7 +20,7 @@ interface Values {
 const OptionsList = [
   { key: 'yes', label: 'Yes', className: s.yes },
   { key: 'no', label: 'No', className: s.no },
-  { key: 'no_with_veto', label: 'No WithVeto', className: s.veto },
+  { key: 'no_with_veto', label: 'No\nWithVeto', className: s.veto },
   { key: 'abstain', label: 'Abstain', className: s.abstain }
 ]
 
@@ -30,7 +30,7 @@ const Vote = ({ id, onSubmitting, onSubmit }: Props) => {
 
   /* validation */
   const validate = ({ option }: Values) => ({
-    option: !option ? 'Option is required' : ''
+    option: !option ? t('Option is required') : ''
   })
 
   /* state: form */
@@ -80,7 +80,7 @@ const Vote = ({ id, onSubmitting, onSubmit }: Props) => {
                     htmlFor={key}
                     className={c(s.label, className, checked && s.checked)}
                   >
-                    {label}
+                    {t(label)}
                   </label>
                 </div>
               )

@@ -32,7 +32,7 @@ const VoteTable = ({ id, count }: Vote) => {
           className={c('badge', params.option === s && 'badge-primary')}
           key={s}
         >
-          {s || 'All votes'}({s ? count[s] : total})
+          {t(s) || t('All votes')}({s ? count[s] : total})
         </button>
       ))}
     </section>
@@ -51,7 +51,7 @@ const VoteTable = ({ id, count }: Vote) => {
       <td>
         <ValidatorLink {...voter} />
       </td>
-      <td>{answer}</td>
+      <td>{t(answer)}</td>
       <td className="text-right">
         <Finder q="tx" v={txhash}>
           {format.truncate(txhash, [14, 13])}

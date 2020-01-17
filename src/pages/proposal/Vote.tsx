@@ -46,7 +46,7 @@ const Vote = ({ vote, showProgressBar, threshold }: Props) => {
           {list.map(({ label, ratio, amount }) => (
             <div className={s.option} key={label}>
               <article className={s[label]}>
-                <h1>{label}</h1>
+                <h1>{t(label)}</h1>
                 <p>{percent(ratio)}</p>
                 <Amount fontSize={14}>{amount}</Amount>
               </article>
@@ -65,8 +65,8 @@ const Vote = ({ vote, showProgressBar, threshold }: Props) => {
             </strong>
           </p>
           <small>
-            {[total, stakedLuna].map(formatNumeral).join(' of ')}{' '}
-            {t('LUNA has voted.')}
+            {[total, stakedLuna].map(formatNumeral).join(' of ')} Luna
+            {t(' has voted.')}
           </small>
         </footer>
       )}

@@ -31,13 +31,16 @@ const ProposalCard = (proposal: ProposalItem) => {
         <VoteChart options={list} />
         {mostVoted &&
           renderDetail([
-            'Most voted on',
+            t('Most voted on'),
             <>
               {mostVoted.label}
               <small>({percent(mostVoted.ratio)})</small>
             </>
           ])}
-        {renderDetail(['Ends in', <small>{format.date(votingEndTime)}</small>])}
+        {renderDetail([
+          t('Ends in'),
+          <small>{format.date(votingEndTime)}</small>
+        ])}
       </section>
     )
   }
@@ -47,7 +50,7 @@ const ProposalCard = (proposal: ProposalItem) => {
       <Card className={s.card} bodyClassName={s.main}>
         <section>
           <Badge className={c('text-capitalize', getBadgeColor(status))}>
-            {status}
+            {t(status)}
           </Badge>
 
           <h1 className={s.title}>{title}</h1>
@@ -63,9 +66,9 @@ const ProposalCard = (proposal: ProposalItem) => {
           {proposal.status === 'Deposit' ? (
             <section className={s.details}>
               <Orb ratio={calcDepositRatio(deposit)} size={100} />
-              {renderDetail(['Deposit', percent(calcDepositRatio(deposit))])}
+              {renderDetail([t('Deposit'), percent(calcDepositRatio(deposit))])}
               {renderDetail([
-                'Ends in',
+                t('Ends in'),
                 <small>{format.date(deposit.depositEndTime)}</small>
               ])}
             </section>

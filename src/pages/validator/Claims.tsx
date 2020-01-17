@@ -40,7 +40,7 @@ const Claims = ({ address }: { address: string }) => {
           </Finder>
         </td>
 
-        <td>{claim.type}</td>
+        <td>{t(claim.type)}</td>
 
         <td className="text-right">
           {Array.isArray(claim.amounts) && (

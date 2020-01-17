@@ -35,7 +35,7 @@ const Delegations = ({ address }: { address: string }) => {
         <td>
           <Finder q="blocks">{event.height}</Finder>
         </td>
-        <td>{event.type}</td>
+        <td>{t(event.type)}</td>
         <td className="text-right">
           <Amount>{event.amount.amount}</Amount>
         </td>

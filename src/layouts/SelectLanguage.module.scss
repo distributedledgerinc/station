@@ -1,7 +1,6 @@
 @import '../styles/mixins';
 
 .container {
-  font-size: 12px;
   padding: 20px;
 }
 
@@ -28,6 +27,7 @@
 
 .lang {
   @include flex(space-between);
+  font-size: 12px;
 
   section {
     @include flex(flex-start);
@@ -51,4 +51,8 @@
     border-radius: 3px;
     background: white;
   }
+}
+
+.select {
+  font-size: 14px;
 }

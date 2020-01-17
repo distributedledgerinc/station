@@ -9,6 +9,10 @@ type Props = Omit<Governance, 'proposals'>
 const Footer = ({ votingPeriod, minDeposit, maxDepositPeriod }: Props) => {
   const { t } = useTranslation()
 
+  const stringify = (nanosecond: string) =>
+    Duration.fromMillis(toNumber(div(nanosecond, 1e6))).toFormat('d') +
+    t(' days')
+
   const renderContent = ([title, content]: [string, ReactNode]) => (
     <article key={title}>
       <h1>{title}</h1>
@@ -26,7 +30,3 @@ const Footer = ({ votingPeriod, minDeposit, maxDepositPeriod }: Props) => {
 }
 
 export default Footer
-
-/* helper */
-const stringify = (nanosecond: string) =>
-  Duration.fromMillis(toNumber(div(nanosecond, 1e6))).toFormat('d') + ' days'

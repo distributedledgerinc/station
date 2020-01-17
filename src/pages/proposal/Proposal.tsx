@@ -35,15 +35,15 @@ const Component = (props: ProposalDetail) => {
       ) : key === 'tax_rate' ? (
         percent(v)
       ) : (
-        v
+        t(v)
       )
 
-    return [key, stringify(value)]
+    return [t(key), stringify(value)]
   }
 
   const metadata: Metadata[] = [
     [`${t('Proposal')} ID`, id],
-    [t('Type'), type],
+    [t('Type'), t(type)],
     ...content.map(parseContent),
     [t('Submit time'), format.date(submitTime)]
   ]
