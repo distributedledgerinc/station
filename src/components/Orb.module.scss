@@ -11,13 +11,13 @@
   overflow: hidden;
 }
 
-$green: #1a9980;
+$primary_green: #1a9980;
 
 .bar {
   @include flex();
 
   flex: none;
-  background: $green;
+  background: $primary_green;
   color: white;
   font-size: 10px;
   font-weight: 500;
@@ -26,7 +26,7 @@ $green: #1a9980;
   position: relative;
 
   svg {
-    fill: $green;
+    fill: $primary_green;
     position: absolute;
     left: 0;
     right: 0;

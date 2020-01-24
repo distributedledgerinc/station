@@ -5,7 +5,8 @@ $border-bottom: 1px solid fade-out(white, 0.9);
 
 .nav {
   @include drag();
-  background: $navy;
+  background: $white; // Logo background
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
 
   @media (min-width: $breakpoint-large) {
     width: $nav-width-large;
@@ -39,7 +40,8 @@ $border-bottom: 1px solid fade-out(white, 0.9);
   .logo,
   .toggle {
     @include flex();
-    color: white;
+    // color: $white;
+    color: $primary_green;
 
     @media (max-width: $breakpoint-large - 1) {
       padding: 0 20px;
@@ -53,8 +55,9 @@ $border-bottom: 1px solid fade-out(white, 0.9);
       text-decoration: none;
     }
 
+    // Text logo color
     svg {
-      fill: white;
+      fill: $primary_green;
     }
   }
 
@@ -83,7 +86,7 @@ $border-bottom: 1px solid fade-out(white, 0.9);
 .main {
   @include flex(space-between, stretch);
   flex-direction: column;
-  background: $navy;
+  background: $white; // Sidebar background
 
   @media (max-width: $breakpoint-large - 1) {
     display: none;

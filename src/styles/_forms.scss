@@ -1,4 +1,4 @@
-$border: fade-out($navy, 0.8);
+$border: fade-out($primary_green, 0.8);
 
 form {
   > h1 {
@@ -162,7 +162,7 @@ textarea.form-control {
   background: $bg;
   border: 1px solid $border;
   border-radius: 5px;
-  color: $red;
+  color: $primary_red;
   display: flex;
   font-size: 12px;
   padding: 5px 7px;
