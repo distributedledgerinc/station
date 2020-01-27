@@ -34,7 +34,7 @@ $border-bottom: 1px solid fade-out(white, 0.9);
 
   @media (min-width: $breakpoint-large) {
     border-bottom: $border-bottom;
-    height: $nav-height-large;
+    // height: $nav-height-large;
   }
 
   .logo,
@@ -80,6 +80,12 @@ $border-bottom: 1px solid fade-out(white, 0.9);
     @media (min-width: $breakpoint-large) {
       display: none;
     }
+  }
+
+  // Logo image
+  img {
+    height: $nav-logo-height;
+    max-width: 100%;
   }
 }
 

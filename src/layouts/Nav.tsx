@@ -6,6 +6,8 @@ import Icon from '../components/Icon'
 import NavItem from './NavItem'
 import NavFooter from './NavFooter'
 import { ReactComponent as TerraStation } from '../helpers/TerraStation.svg'
+// TODO: Replace png with svg version (Need to reduce size)
+import mainLogo from '../images/mxnc_lettering.png'
 import s from './Nav.module.scss'
 
 const Nav = ({ pathname }: { pathname: string }) => {
@@ -32,7 +34,8 @@ const Nav = ({ pathname }: { pathname: string }) => {
     <nav className={s.nav}>
       <header className={s.header}>
         <Link to="/" className={s.logo}>
-          <TerraStation />
+          <img src={mainLogo} alt="MXNC Logo" className="logo" />
+          {/* <TerraStation /> */}
         </Link>
 
         <button onClick={toggle} className={s.toggle}>
