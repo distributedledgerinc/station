@@ -5,8 +5,7 @@ import { useApp } from '../hooks'
 import Icon from '../components/Icon'
 import NavItem from './NavItem'
 import NavFooter from './NavFooter'
-import { ReactComponent as TerraStation } from '../helpers/TerraStation.svg'
-// TODO: Replace png with svg version (Need to reduce size)
+/* import { ReactComponent as TerraStation } from '../helpers/TerraStation.svg' */
 import mainLogo from '../images/mxnc_lettering.png'
 import s from './Nav.module.scss'
 
