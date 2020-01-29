@@ -19,7 +19,8 @@
 }
 
 .card {
-  background: #f9fafd;
+  border: 1px solid $border;
+  background: $bg;
   height: 100%;
 }
 

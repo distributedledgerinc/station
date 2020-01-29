@@ -1,4 +1,6 @@
+@import '../../styles/variables';
 .component {
+  color: $primary_red;
   margin: 100px 0;
   text-align: center;
 }

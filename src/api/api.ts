@@ -12,16 +12,12 @@ const Chain = {
   COLUMBUS: 'columbus-3',
   VODKA: 'vodka-0001',
   SOJU: 'soju-0013',
-  FITZ: 'fitz',
-  TEST: 'test'
+  FITZ: 'fitz'
 }
 
-export const ChainList = [
-  Chain.COLUMBUS,
-  Chain.VODKA,
-  Chain.SOJU,
-  Chain.TEST
-].concat(!isProduction ? [Chain.FITZ] : [])
+export const ChainList = [Chain.COLUMBUS, Chain.VODKA, Chain.SOJU].concat(
+  !isProduction ? [Chain.FITZ] : []
+)
 
 const Chains: { [slug: string]: Chain } = {
   [Chain.COLUMBUS]: {
@@ -39,10 +35,6 @@ const Chains: { [slug: string]: Chain } = {
   [Chain.FITZ]: {
     fcd: 'https://fitz.terra.money:5562',
     socket: { hostname: 'fcd.terra.dev', port: 443, secure: true }
-  },
-  [Chain.TEST]: {
-    fcd: 'http://localhost:8888',
-    socket: { hostname: 'localhost', port: 8080, secure: true }
   }
 }
 
