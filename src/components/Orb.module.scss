@@ -1,4 +1,5 @@
 @import '../styles/mixins';
+@import '../styles/variables';
 
 .orb {
   flex: none;
@@ -10,8 +11,6 @@
   border-radius: 50%;
   overflow: hidden;
 }
-
-$primary_green: #1a9980;
 
 .bar {
   @include flex();

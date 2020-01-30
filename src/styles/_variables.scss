@@ -18,10 +18,10 @@ $purple: #3b3561;
 $bg: #f7f7f7;
 $bg-hover: fade-out($brand, 0.98);
 
-$yes: #0ad3ff;
+$yes: #3772ff;
 $no: $primary_red;
-$veto: $primary_yellow;
-$abstain: #c3979f;
+$veto: $orange;
+$abstain: #3b3561;
 
 /* Sizes */
 $breakpoint: 768px;
@@ -33,6 +33,7 @@ $max-width: (1180px + (2 * $gutter-large));
 
 /* Image logo sizes */
 $nav-logo-height: 113px;
+$nav-logo-height-mobile: 80px;
 
 /* Copmonents */
 $nav-height: 55px;

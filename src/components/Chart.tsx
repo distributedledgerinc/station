@@ -116,6 +116,7 @@ const Chart = (props: Props) => {
 export default Chart
 
 /* Chart.js */
+const BLACK = 'rgba(0, 0, 0, 0.8)'
 const GREEN = '#006947'
 const ALTGREEN = '#3B856D'
 const RED = '#c02a29'
@@ -158,7 +159,7 @@ const getOptions = (
   }
 
   const tooltips = {
-    backgroundColor: GREEN,
+    backgroundColor: BLACK,
     titleFontFamily: 'Gotham',
     titleFontSize: 13,
     titleFontStyle: 700,
@@ -194,7 +195,8 @@ const getOptions = (
       tooltips: {
         mode: 'index',
         intersect: false,
-        backgroundColor: GREEN,
+        backgroundColor: BLACK,
+
         titleFontFamily: 'Gotham',
         titleFontSize: 16,
         titleFontStyle: 500,
