@@ -106,7 +106,7 @@ const Deposit = ({ id, deposit, max, onSubmitting, onSubmit }: Props) => {
                 autoComplete="off"
               />
               <div className="input-group-append">
-                <span className="input-group-text">Luna</span>
+                <span className="input-group-text">MXNC</span>
               </div>
             </div>
             {renderError('input')}
@@ -128,7 +128,7 @@ const Deposit = ({ id, deposit, max, onSubmitting, onSubmit }: Props) => {
           denom="uluna"
           payload={{ depositor: address, amount: [{ denom: 'uluna', amount }] }}
           label={['Deposit', 'Depositting']}
-          message={`Deposited ${input} Luna to proposal ${id}`}
+          message={`Deposited ${input} MXNC to proposal ${id}`}
           onSubmitting={handleSubmitting}
           onFinish={onSubmit}
         />

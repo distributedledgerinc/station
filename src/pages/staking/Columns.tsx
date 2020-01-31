@@ -18,7 +18,7 @@ type Column = {
 }
 
 const Columns = (props: Staking) => {
-  const { undelegations, availableLuna, delegationTotal, rewards } = props
+  const { undelegations, availableMXNC, delegationTotal, rewards } = props
 
   const undelegationsAmount =
     undelegations && undelegations.length
@@ -28,7 +28,7 @@ const Columns = (props: Staking) => {
   const columns: Column[] = [
     {
       title: 'Available for delegation',
-      value: availableLuna
+      value: availableMXNC
     },
     {
       title: 'Delegated assets',

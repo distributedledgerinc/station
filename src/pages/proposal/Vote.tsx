@@ -15,9 +15,9 @@ interface Props {
 }
 
 const Vote = ({ vote, showProgressBar, threshold }: Props) => {
-  const { distribution, total, votingEndTime, stakedLuna } = vote
+  const { distribution, total, votingEndTime, stakedMXNC } = vote
   const { list } = convertVote(distribution)
-  const ratio = div(total, stakedLuna)
+  const ratio = div(total, stakedMXNC)
 
   return (
     <>
@@ -59,7 +59,7 @@ const Vote = ({ vote, showProgressBar, threshold }: Props) => {
             <strong>Percent voting: {percent(ratio)}</strong>
           </p>
           <small>
-            {[total, stakedLuna].map(formatNumeral).join(' of ')} LUNA has
+            {[total, stakedMXNC].map(formatNumeral).join(' of ')} MXNC has
             voted.
           </small>
         </footer>

@@ -122,7 +122,7 @@ const Price = ({ actives }: { actives: string[] }) => {
 
   return (
     <Card
-      title="Luna price"
+      title="MXNC price"
       actions={renderActions()}
       bodyClassName={c(!!lastPrice && s.body)}
     >

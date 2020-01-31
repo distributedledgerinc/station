@@ -7,7 +7,7 @@ import Vesting from './Vesting'
 import s from './VestingList.module.scss'
 
 const TOOLTIP = `This displays your investment with Terra.
-Vested Luna can be delegated in the meantime.`
+Vested MXNC can be delegated in the meantime.`
 
 const VestingList = ({ list }: { list: Vesting[] }) => (
   <Card

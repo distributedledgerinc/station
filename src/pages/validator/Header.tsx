@@ -45,7 +45,7 @@ const Header = (v: Validator) => (
         <hr />
         <span style={{ fontSize: 14 }}>
           {format.amount(v.votingPower.amount).split('.')[0]}{' '}
-          <small>Luna</small>
+          <small>MXNC</small>
         </span>
       </article>
 

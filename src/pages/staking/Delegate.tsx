@@ -199,7 +199,7 @@ const Form = (props: Props & FormProps) => {
                 autoFocus
               />
               <div className="input-group-append">
-                <span className="input-group-text">Luna</span>
+                <span className="input-group-text">MXNC</span>
               </div>
             </div>
             {renderError('input')}

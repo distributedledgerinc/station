@@ -160,7 +160,7 @@ const Swap = ({ denoms, getMax }: Props) => {
               type="tooltip"
               placement="top"
               width={280}
-              content={`Minimum ${min} of spread will be taken into account regarding LUNA swapping.`}
+              content={`Minimum ${min} of spread will be taken into account regarding MXNC swapping.`}
             >
               {({ ref, getAttrs }) => (
                 <Icon

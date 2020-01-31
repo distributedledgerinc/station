@@ -53,7 +53,7 @@ interface Vote {
   count: Count
   total: string
   votingEndTime: string
-  stakedLuna: string
+  stakedMXNC: string
 }
 
 interface Count {

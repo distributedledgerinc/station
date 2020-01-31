@@ -243,7 +243,7 @@ const NewProposal = ({ max, communityPool, onSubmitting, onSubmit }: Props) => {
                 autoComplete="off"
               />
               <div className="input-group-append">
-                <span className="input-group-text">Luna</span>
+                <span className="input-group-text">MXNC</span>
               </div>
             </div>
             {renderError('amount')}
@@ -347,7 +347,7 @@ const NewProposal = ({ max, communityPool, onSubmitting, onSubmit }: Props) => {
                 autoComplete="off"
               />
               <div className="input-group-append">
-                <span className="input-group-text">Luna</span>
+                <span className="input-group-text">MXNC</span>
               </div>
             </div>
             {renderError('input')}
@@ -379,7 +379,7 @@ const NewProposal = ({ max, communityPool, onSubmitting, onSubmit }: Props) => {
             ...sanitize(TypesList[typeIndex].key, updates)
           }}
           label={['Propose', 'Proposing']}
-          message={`Created proposal ${title} with ${input || 0} Luna deposit`}
+          message={`Created proposal ${title} with ${input || 0} MXNC deposit`}
           onSubmitting={handleSubmitting}
           onFinish={onSubmit}
         />

@@ -4,7 +4,7 @@ import { useModal } from '../../hooks'
 import Modal from '../../components/Modal'
 import ActionBar from '../../components/ActionBar'
 import ButtonWithName from '../../components/ButtonWithName'
-import WithMaxLuna from '../../components/WithMaxLuna'
+import WithMaxMXNC from '../../components/WithMaxMXNC'
 import Deposit from './actions/Deposit'
 import Vote from './actions/Vote'
 
@@ -69,11 +69,11 @@ const Component = ({ max, disabled, detail }: Props) => {
 }
 
 const Actions = (props: { detail: ProposalDetail }) => (
-  <WithMaxLuna>
+  <WithMaxMXNC>
     {(max, balance) => (
       <Component max={max} disabled={!balance.length} {...props} />
     )}
-  </WithMaxLuna>
+  </WithMaxMXNC>
 )
 
 export default Actions

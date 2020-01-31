@@ -13,7 +13,7 @@ type Results = Result[]
 const StakingReturn = () => (
   <ChartCard
     title="Staking return"
-    description="Annualized staking yield for Luna based on daily block rewards and latest prices of Luna"
+    description="Annualized staking yield for MXNC based on daily block rewards and latest prices of MXNC"
     url="/v1/dashboard/staking_return"
     cumulativeOptions={{ initial: false, hide: true }}
     renderHeader={(results: Results) => (
