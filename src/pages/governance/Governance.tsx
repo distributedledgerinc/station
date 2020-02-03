@@ -5,7 +5,7 @@ import Page from '../../components/Page'
 import Card from '../../components/Card'
 import Modal from '../../components/Modal'
 import ButtonWithName from '../../components/ButtonWithName'
-import WithMaxLuna from '../../components/WithMaxLuna'
+import WithMaxMXNC from '../../components/WithMaxMXNC'
 import WithRequest from '../../components/WithRequest'
 import NotAvailable from '../market/NotAvailable'
 import NewProposal from './NewProposal'
@@ -22,7 +22,7 @@ const Governance = () => {
   const params = useMemo(() => ({ status: currentTab }), [currentTab])
 
   const button = (
-    <WithMaxLuna>
+    <WithMaxMXNC>
       {(max, balance) => (
         <ButtonWithName
           placement="bottom"
@@ -46,7 +46,7 @@ const Governance = () => {
           {t('New proposal')}
         </ButtonWithName>
       )}
-    </WithMaxLuna>
+    </WithMaxMXNC>
   )
 
   const renderProposal = (item: ProposalItem, index: number) => (

@@ -17,7 +17,7 @@ const StakingReturn = () => {
     <ChartCard
       title={t('Staking return')}
       description={t(
-        'Annualized staking yield for Luna based on daily block rewards and latest prices of Luna'
+        'Annualized staking yield for MXNC based on daily block rewards and latest prices of MXNC'
       )}
       url="/v1/dashboard/staking_return"
       cumulativeOptions={{ initial: false, hide: true }}
@@ -44,13 +44,12 @@ const StakingReturn = () => {
           }
         },
         lineStyle: {
-          borderColor: 'rgba(32, 67, 181, 0.25)',
-          backgroundColor: 'rgba(32, 67, 181, 0.25)'
+          borderColor: 'rgba(0, 105, 71, 0.5)',
+          backgroundColor: 'rgba(0, 105, 71, 0.5)'
         }
       })}
       fixedYAxis
     />
   )
 }
-
 export default StakingReturn

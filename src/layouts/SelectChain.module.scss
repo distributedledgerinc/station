@@ -3,19 +3,24 @@
 
 .component {
   @include flex(space-between);
-  background: darken($navy, 3%);
+  background: darken($primary_green, 3%);
+  color: $hairline;
   padding: 20px;
 
   > div {
     flex: auto;
     margin-right: 10px;
   }
+
+  a {
+    color: $white;
+  }
 }
 
 /* Select */
 .select {
   border-radius: 2px;
-  border: 1px solid #415e9f;
+  border: 1px solid $white;
   font-size: 12px;
   padding: 0 25px 0 10px;
   text-transform: capitalize;
@@ -28,7 +33,6 @@
 /* Connect */
 .connect {
   @include flex(flex-end);
-  color: #76a8f8;
   font-size: 11px;
   height: (11px * 1.5);
   min-width: 75px;

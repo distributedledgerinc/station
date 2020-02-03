@@ -25,7 +25,7 @@ const Deposit = (deposit: Deposit) => {
         <Orb ratio={calcDepositRatio(deposit)} size={120} className={s.orb} />
         <strong>{percent(calcDepositRatio(deposit))}</strong>
         <p>
-          {t('Total')} <Amount hideDecimal>{total}</Amount> Luna
+          {t('Total')} <Amount hideDecimal>{total}</Amount> MXNC
         </p>
       </section>
 

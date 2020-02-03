@@ -116,7 +116,12 @@ const Chart = (props: Props) => {
 export default Chart
 
 /* Chart.js */
-const BLUE = '#2043b5'
+const BLACK = 'rgba(0, 0, 0, 0.8)'
+const GREEN = '#006947'
+const ALTGREEN = '#3B856D'
+const RED = '#c02a29'
+const YELLOW = '#ffde76'
+
 const getOptions = (
   type: ChartType,
   config: {
@@ -131,14 +136,15 @@ const getOptions = (
 
   const props = {
     doughnut: {
-      backgroundColor: ['#6292ec', '#5152f3', '#a757f4', '#f19f4d', '#ce4a6f']
+      // TODO: Update doughnut colors
+      backgroundColor: ['#6292ec', '#5152f3', '#a757f4', YELLOW, RED]
     },
     pie: {
       backgroundColor: config.pieBackgroundColors
     },
     line: {
-      borderColor: BLUE,
-      pointBackgroundColor: BLUE,
+      borderColor: GREEN,
+      pointBackgroundColor: GREEN,
       pointRadius: 0,
       pointHoverRadius: 0,
       ...config.lineStyle
@@ -153,7 +159,7 @@ const getOptions = (
   }
 
   const tooltips = {
-    backgroundColor: BLUE,
+    backgroundColor: BLACK,
     titleFontFamily: 'Gotham',
     titleFontSize: 13,
     titleFontStyle: 700,
@@ -189,7 +195,8 @@ const getOptions = (
       tooltips: {
         mode: 'index',
         intersect: false,
-        backgroundColor: BLUE,
+        backgroundColor: BLACK,
+
         titleFontFamily: 'Gotham',
         titleFontSize: 16,
         titleFontStyle: 500,
@@ -200,7 +207,7 @@ const getOptions = (
         xPadding: 15,
         yPadding: 10,
         caretSize: 6,
-        displayColors: false,
+        displayColors: true,
         callbacks: {
           title: ([{ value }]: ChartJS.ChartTooltipItem[]) => value,
           label: getLabel
@@ -213,7 +220,7 @@ const getOptions = (
             ticks: {
               source: 'data',
               autoSkip: true,
-              fontColor: '#7282c9',
+              fontColor: ALTGREEN,
               fontSize: 11
             },
             gridLines: { color: '#f0f0f0' }
@@ -221,7 +228,7 @@ const getOptions = (
         ],
         yAxes: [
           {
-            ticks: { fontColor: '#7282c9', fontSize: 11 },
+            ticks: { fontColor: ALTGREEN, fontSize: 11 },
             gridLines: { color: '#f0f0f0' }
           }
         ]

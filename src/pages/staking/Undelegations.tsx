@@ -15,7 +15,7 @@ const Undelegations = ({ undelegations }: Props) => {
         <tr>
           <th>{t('Validator')}</th>
           <th className="text-right">
-            Amount <small>(Luna)</small>
+            Amount <small>(MXNC)</small>
           </th>
           <th className="text-right">Release time</th>
         </tr>

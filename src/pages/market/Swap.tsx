@@ -163,7 +163,7 @@ const Swap = ({ denoms, getMax }: Props) => {
         {({ result }: { result: Params }) => {
           const { min_spread, tobin_tax, illiquid_tobin_tax_list } = result
           const min = percent(min_spread, 0)
-          const minText = `${t('Luna swap spread')}: ${t('min.')} ${min}`
+          const minText = `${t('MXNC swap spread')}: ${t('min.')} ${min}`
           const tobin = percent(tobin_tax)
           const tobinText = `Terra ${t('tobin tax')}: ${tobin}`
           const illiquid = illiquid_tobin_tax_list[0]

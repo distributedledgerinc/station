@@ -14,7 +14,7 @@ const DelegationTooltip = (v: Validator) => {
         <tr>
           <th>{t('Action')}</th>
           <th className="text-right">
-            {t('Amount')} <small>(Luna)</small>
+            {t('Amount')} <small>(MXNC)</small>
           </th>
           <th className="text-right">{t('Release time')}</th>
         </tr>

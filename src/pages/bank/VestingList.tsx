@@ -10,7 +10,7 @@ import s from './VestingList.module.scss'
 const VestingList = ({ list }: { list: Vesting[] }) => {
   const { t } = useTranslation()
   const TOOLTIP = t(
-    'This displays your investment with Terra. Vested Luna can be delegated in the meantime.'
+    'This displays your investment with Terra. Vested MXNC can be delegated in the meantime.'
   )
 
   return (

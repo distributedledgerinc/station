@@ -125,7 +125,7 @@ const Price = ({ actives }: { actives: string[] }) => {
 
   return (
     <Card
-      title={t('Luna price')}
+      title={t('MXNC price')}
       actions={renderActions()}
       bodyClassName={c(!!lastPrice && s.body)}
     >

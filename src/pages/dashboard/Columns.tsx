@@ -26,7 +26,7 @@ const Component = ({ dashboard, onClickPrice }: Props) => {
     <div className="row">
       <div className="col col-20 col-full-1280">
         <Card
-          title={t('Luna price')}
+          title={t('MXNC price')}
           footer={
             <Badge small active>
               {format.denom('ukrw')}
@@ -68,7 +68,7 @@ const Component = ({ dashboard, onClickPrice }: Props) => {
           title={t('Staking ratio')}
           footer={
             <Badge small light>
-              {t('Staked Luna / Total Luna')}
+              {t('Staked MXNC / Total MXNC')}
             </Badge>
           }
           small
@@ -79,7 +79,7 @@ const Component = ({ dashboard, onClickPrice }: Props) => {
 
           <p>
             <small>
-              (<Amount hideDecimal>{stakingPool.bondedTokens}</Amount> Luna
+              (<Amount hideDecimal>{stakingPool.bondedTokens}</Amount> MXNC
               {t(' staked')})
             </small>
           </p>

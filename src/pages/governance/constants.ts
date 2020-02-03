@@ -1,6 +1,7 @@
+// Pie Chart colors
 export const optionColors: { [key: string]: string } = {
-  Yes: '#6292ec',
-  No: '#ce4a6f',
-  NoWithVeto: '#f19f4d',
-  Abstain: '#a757f4'
+  Yes: '#3772FF', // Blue
+  No: '#c02a29', // Red
+  NoWithVeto: '#fd9a02', // Orange
+  Abstain: '#3b3561' // Purple
 }

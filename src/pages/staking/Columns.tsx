@@ -19,7 +19,7 @@ type Column = {
 }
 
 const Columns = (props: Staking) => {
-  const { undelegations, availableLuna, delegationTotal, rewards } = props
+  const { undelegations, availableMXNC, delegationTotal, rewards } = props
   const { t } = useTranslation()
 
   const undelegationsAmount =
@@ -30,7 +30,7 @@ const Columns = (props: Staking) => {
   const columns: Column[] = [
     {
       title: t('Available for delegation'),
-      value: availableLuna
+      value: availableMXNC
     },
     {
       title: t('Delegated assets'),

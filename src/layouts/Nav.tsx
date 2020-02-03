@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import c from 'classnames'
 import Icon from '../components/Icon'
 import NavItem from './NavItem'
+import mainLogo from '../images/mxnc_lettering.png'
 import SelectLanguage from './SelectLanguage'
 import SelectChain from './SelectChain'
-import { ReactComponent as TerraStation } from '../helpers/TerraStation.svg'
 import s from './Nav.module.scss'
 
 const Nav = ({ pathname }: { pathname: string }) => {
@@ -16,12 +16,12 @@ const Nav = ({ pathname }: { pathname: string }) => {
   const close = () => setIsOpen(false)
 
   const menu = [
-    { name: t('Dashboard'), to: '/', icon: 'dashboard' },
-    { name: t('Bank'), to: '/bank', icon: 'account_balance' },
-    { name: t('Transactions'), to: '/transactions', icon: 'swap_horiz' },
-    { name: t('Staking'), to: '/staking', icon: 'layers' },
-    { name: t('Market'), to: '/market', icon: 'timeline' },
-    { name: t('Governance'), to: '/governance', icon: 'how_to_vote' }
+    { name: 'Dashboard', to: '/', icon: 'dashboard' },
+    { name: 'Bank', to: '/bank', icon: 'account_balance' },
+    { name: 'Transactions', to: '/transactions', icon: 'swap_horiz' },
+    { name: 'Staking', to: '/staking', icon: 'layers' },
+    /* { name: 'Market', to: '/market', icon: 'timeline' }, */
+    { name: 'Governance', to: '/governance', icon: 'how_to_vote' }
   ]
 
   /* Close on change path (Android) */
@@ -33,7 +33,8 @@ const Nav = ({ pathname }: { pathname: string }) => {
     <nav className={s.nav}>
       <header className={s.header}>
         <Link to="/" className={s.logo}>
-          <TerraStation />
+          <img src={mainLogo} alt="MXNC Logo" className="logo" />
+          {/* <TerraStation /> */}
         </Link>
 
         <button onClick={toggle} className={s.toggle}>

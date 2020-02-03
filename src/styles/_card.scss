@@ -1,5 +1,5 @@
 $border: 1px solid $line;
-$box-shadow: fade-out(black, 0.95);
+$box-shadow: rgba($black, 0.05);
 $padding: 25px;
 $padding-small: 20px;
 
@@ -7,21 +7,21 @@ $padding-small: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: white;
+  background: $white;
 
   @media (max-width: $breakpoint - 1) {
-    box-shadow: 0 1px 5px 0 $box-shadow;
+    box-shadow: 0px 5px 20px $box-shadow;
 
     & & {
-      border: $border;
+      // border: $border;
       border-radius: $radius;
     }
   }
 
   @media (min-width: $breakpoint) {
-    border: $border;
+    // border: $border;
     border-radius: $radius;
-    box-shadow: 0 1px 1px 0 $box-shadow;
+    box-shadow: 0px 5px 20px $box-shadow;
   }
 
   & & {
@@ -42,7 +42,7 @@ $padding-small: 20px;
 
   &:hover .card-icon {
     background: $brand;
-    color: white;
+    color: $white;
   }
 }
 

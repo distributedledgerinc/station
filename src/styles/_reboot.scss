@@ -13,8 +13,9 @@ html {
 }
 
 body {
-  background: #f8f9fe;
+  background: $bg;
   color: $brand;
+  color: $black;
   font-family: 'Gotham', sans-serif;
   line-height: 1.5;
   margin: 0;
@@ -51,6 +52,7 @@ small {
 
 h1,
 h2 {
+  color: $brand;
   font-size: inherit;
   font-weight: 500;
 }

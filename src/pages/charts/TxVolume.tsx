@@ -83,8 +83,8 @@ const TxVolume = () => {
             }
           },
           lineStyle: {
-            borderColor: 'rgba(32, 67, 181, 0.25)',
-            backgroundColor: 'rgba(32, 67, 181, 0.25)'
+            borderColor: 'rgba(0, 105, 71, 0.5)',
+            backgroundColor: 'rgba(0, 105, 71, 0.25)'
           }
         }
       }}

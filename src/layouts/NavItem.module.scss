@@ -4,7 +4,9 @@
 .link {
   @include flex(space-between);
 
-  color: fade-out(white, 0.25);
+  // color: fade-out(white, 0.25);
+  color: $black;
+  font-weight: 500;
   width: 100%;
 
   @media (max-width: $breakpoint-large - 1) {
@@ -21,7 +23,8 @@
     text-decoration: none;
 
     @media (min-width: $breakpoint-large) {
-      color: white;
+      background-color: fade-out($primary_green, 0.96);
+      color: $primary_green;
     }
   }
 
@@ -40,13 +43,19 @@
 }
 
 .active {
-  color: white;
+  background-color: $primary_green;
+  color: $white;
 
   @media (max-width: $breakpoint-large - 1) {
     font-weight: 500;
   }
 
   @media (min-width: $breakpoint-large) {
-    background: fade-out(white, 0.96);
+    // background: fade-out($primary_green, 0.96);
+  }
+
+  &:hover {
+    background-color: $primary_green;
+    color: $white;
   }
 }

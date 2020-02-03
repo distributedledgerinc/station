@@ -55,11 +55,11 @@ a.btn {
 }
 
 .btn-danger {
-  background: $red;
+  background: $primary_red;
   color: white;
 
   &:hover:not(:disabled) {
-    background: darken($red, 5%);
+    background: darken($primary_red, 5%);
   }
 }
 

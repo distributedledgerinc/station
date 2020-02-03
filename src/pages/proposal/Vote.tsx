@@ -16,11 +16,11 @@ interface Props {
 }
 
 const Vote = ({ vote, showProgressBar, threshold }: Props) => {
-  const { distribution, total, votingEndTime, stakedLuna } = vote
+  const { distribution, total, votingEndTime, stakedMXNC } = vote
 
   const { t } = useTranslation()
   const { list } = convertVote(distribution)
-  const ratio = div(total, stakedLuna)
+  const ratio = div(total, stakedMXNC)
 
   return (
     <>
@@ -65,7 +65,7 @@ const Vote = ({ vote, showProgressBar, threshold }: Props) => {
             </strong>
           </p>
           <small>
-            {[total, stakedLuna].map(formatNumeral).join(' of ')} Luna
+            {[total, stakedMXNC].map(formatNumeral).join(' of ')} MXNC
             {t(' has voted.')}
           </small>
         </footer>
