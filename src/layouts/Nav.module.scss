@@ -126,5 +126,9 @@ $border-bottom: 1px solid fade-out(white, 0.9);
 }
 
 .footer {
-  color: white;
+  color: $black;
+
+  h1 {
+    color: $white;
+  }
 }
