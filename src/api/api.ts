@@ -1,6 +1,6 @@
 import axios from 'axios'
 import socketCluster, { SCClientSocket } from 'socketcluster-client'
-import { isProduction } from '../helpers/env'
+// import { isProduction } from '../helpers/env'
 
 interface Chain {
   fcd: string
