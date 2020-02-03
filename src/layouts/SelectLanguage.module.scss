@@ -17,7 +17,7 @@
 }
 
 .item {
-  border-top: 1px solid fade-out($primary_green, 0.95);
+  border-top: 1px solid fade-out($white, 0.95);
 }
 
 .button {
@@ -36,6 +36,8 @@
 
   img {
     margin-right: 6px;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
   }
 
   .radio {
@@ -43,7 +45,7 @@
     width: 12px;
     height: 12px;
     border-radius: 6px;
-    background: fade-out($primary_green, 0.8);
+    background: fade-out($white, 0.8);
   }
 
   .active {
