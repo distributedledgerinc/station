@@ -10,6 +10,7 @@ import { report } from '../utils'
 import { localSettings } from '../utils/localStorage'
 import { useModal } from '../hooks'
 import routes from '../routes'
+import { Languages } from '../lang/list'
 import Modal from '../components/Modal'
 import ModalContent from '../components/ModalContent'
 import ErrorBoundary from '../components/ErrorBoundary'
@@ -20,12 +21,16 @@ import Header from './Header'
 import AuthContext, { useAuthContext } from './AuthContext'
 import s from './App.module.scss'
 import './App.scss'
+import { useTranslation } from 'react-i18next'
 
 type AppContext = {
   key: number
   isReady: boolean
   refresh: () => void
   authModal: { open: () => void; close: () => void }
+
+  lang: string
+  selectLang: (lang: string) => void
 
   chain: string
   selectChain: (chain: string) => void
@@ -40,6 +45,9 @@ const initial = {
   refresh: () => {},
   authModal: { open: () => {}, close: () => {} },
 
+  lang: Languages.en.key,
+  selectLang: () => {},
+
   chain: ChainList[0],
   selectChain: () => {},
 
@@ -47,17 +55,26 @@ const initial = {
   setGoBack: () => {}
 }
 
-const getInitialChain = () => {
-  const { chain: local } = localSettings.get()
-  const defaultChain = ChainList[0]
-  const chain = local && ChainList.includes(local) ? local : defaultChain
-  localSettings.set({ chain })
-  return chain
-}
-
 export const AppContext = createContext<AppContext>(initial)
 
 const App = ({ location, history }: RouteComponentProps) => {
+  const getInitialChain = () => {
+    const { chain: local } = localSettings.get()
+    const defaultChain = ChainList[0]
+    const chain = local && ChainList.includes(local) ? local : defaultChain
+    localSettings.set({ chain })
+    return chain
+  }
+
+  const getInitialLang = () => {
+    const { lang: local } = localSettings.get()
+    const d = Object.keys(Languages).find(key => i18n.languages.includes(key))
+    const init = local ?? d
+    return init && Languages[init] ? init : initial.lang
+  }
+
+  const { i18n } = useTranslation()
+
   /* context: modal */
   const modal = useModal()
 
@@ -68,6 +85,7 @@ const App = ({ location, history }: RouteComponentProps) => {
   })
 
   /* effect: app */
+  const [lang, setLang] = useState<string>(getInitialLang)
   const [chain, setChain] = useState<string>(getInitialChain)
   const [key, setKey] = useState<number>(initial.key) // refresh
   const [disabled, setDisabled] = useState<ReactNode>()
@@ -116,18 +134,27 @@ const App = ({ location, history }: RouteComponentProps) => {
 
   /* provider: app */
   const [goBack, setGoBack] = useState(initial.goBack) // Header
+
+  const selectLang = (lang: string) => {
+    localSettings.set({ lang })
+    i18n.changeLanguage(lang)
+    setLang(lang)
+    refresh()
+  }
+
   const selectChain = (chain: string) => {
     localSettings.set({ chain })
     changeChain(chain)
     setChain(chain)
     location.pathname.includes('/validator') && history.push('/staking')
+    location.pathname.includes('/proposal') && history.push('/governance')
     refresh()
   }
 
   const isReady = !!key
   const app = Object.assign(
     { key, isReady, refresh, authModal },
-    { chain, selectChain, goBack, setGoBack }
+    { lang, selectLang, chain, selectChain, goBack, setGoBack }
   )
 
   return disabled ? (
@@ -135,7 +162,7 @@ const App = ({ location, history }: RouteComponentProps) => {
   ) : isReady ? (
     <AppContext.Provider value={app}>
       <AuthContext.Provider value={auth}>
-        <Nav pathname={location.pathname} />
+        <Nav pathname={location.pathname} key={key} />
         <section className={s.main}>
           <Header className={s.header} />
           <section className={s.content} key={key}>
