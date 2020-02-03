@@ -1,4 +1,5 @@
 import React, { CSSProperties, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { path, equals } from 'ramda'
 import { gt, plus, sum } from '../../api/math'
 import FlexTable from '../../components/FlexTable'
@@ -7,7 +8,7 @@ import renderItem from './ValidatorItem'
 
 type Attr = { align?: 'center' | 'right'; style: CSSProperties }
 type Sorter = { prop: string[]; isString?: boolean }
-const DefaultSorter: Sorter = { prop: ['votingPower', 'weight'] }
+const DefaultSorter: Sorter = { prop: ['stakingReturn'] }
 const Columns: [string, Attr, Sorter?][] = [
   ['Rank', { style: { width: 60 } }],
   [
@@ -15,7 +16,11 @@ const Columns: [string, Attr, Sorter?][] = [
     { style: { width: 240 } },
     { prop: ['description', 'moniker'], isString: true }
   ],
-  ['Voting power', { align: 'right', style: { width: 120 } }, DefaultSorter],
+  [
+    'Voting power',
+    { align: 'right', style: { width: 120 } },
+    { prop: ['votingPower', 'weight'] }
+  ],
   [
     'Validator commission',
     { align: 'right', style: { width: 100, textAlign: 'right' } },
@@ -37,6 +42,8 @@ const Columns: [string, Attr, Sorter?][] = [
 
 const ValidatorsList = (staking: Staking) => {
   const { validators, delegationTotal = '0', undelegations } = staking
+  const { t } = useTranslation()
+
   const undelegationTotal =
     undelegations && undelegations.length
       ? sum(undelegations.map(u => u.amount))
@@ -60,12 +67,12 @@ const ValidatorsList = (staking: Staking) => {
 
         const button = (
           <button onClick={handleClick} className="flex">
-            {h}
+            {t(h)}
             <Icon name={icon} style={{ opacity: isPropSelected ? 1 : 0.3 }} />
           </button>
         )
 
-        return !s ? h : button
+        return !s ? t(h) : button
       })}
       body={validators
         .filter(v => {
