@@ -8,14 +8,14 @@ describe('format', () => {
   })
 
   test('denom', () => {
-    expect(format.denom('uluna')).toBe('Luna')
+    expect(format.denom('uluna')).toBe('MXNC')
     expect(format.denom('ukrw')).toBe('KRT')
   })
 
   describe('coin', () => {
     test.each`
       coin                                        | string
-      ${{ amount: '1000000000', denom: 'uluna' }} | ${'1,000.000000 Luna'}
+      ${{ amount: '1000000000', denom: 'uluna' }} | ${'1,000.000000 MXNC'}
     `('$coin', ({ coin, string }) => {
       expect(format.coin(coin)).toBe(string)
     })

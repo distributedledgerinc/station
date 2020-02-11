@@ -1,5 +1,5 @@
 interface Staking {
-  availableLuna?: string
+  availableMXNC?: string
   delegationTotal?: string
   undelegations?: Undelegation[]
   rewards?: { denoms: Reward[]; total: string }

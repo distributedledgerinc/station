@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import c from 'classnames'
-import { useApp } from '../hooks'
 import Icon from '../components/Icon'
 import NavItem from './NavItem'
-import NavFooter from './NavFooter'
-/* import { ReactComponent as TerraStation } from '../helpers/TerraStation.svg' */
 import mainLogo from '../images/mxnc_lettering.png'
+import SelectLanguage from './SelectLanguage'
+import SelectChain from './SelectChain'
 import s from './Nav.module.scss'
 
 const Nav = ({ pathname }: { pathname: string }) => {
-  const { key } = useApp()
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggle = () => setIsOpen(!isOpen)
   const close = () => setIsOpen(false)
@@ -51,7 +51,10 @@ const Nav = ({ pathname }: { pathname: string }) => {
           ))}
         </ul>
 
-        <NavFooter onChangeChain={close} key={key} />
+        <footer className={s.footer}>
+          <SelectLanguage />
+          <SelectChain onChangeChain={close} />
+        </footer>
       </section>
     </nav>
   )

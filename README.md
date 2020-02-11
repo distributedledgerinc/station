@@ -7,7 +7,7 @@
 Terra Station allows users to:
 
 - Create wallets and send tokens
-- Get involved with staking, with looking through validator information and delegating Luna tokens
+- Get involved with staking, with looking through validator information and delegating MXNC tokens
 - A dashboard monitoring key Terra macroeconomic variables
 - Atomically swap currencies on the Terra network at the effective on-chain exchange rate.
 

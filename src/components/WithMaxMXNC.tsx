@@ -7,7 +7,7 @@ interface Props {
   children: (max: string, balance: Balance[]) => ReactNode
 }
 
-const WithMaxLuna = ({ children }: Props) => {
+const WithMaxMXNC = ({ children }: Props) => {
   const { address } = useAuth()
 
   return !address ? null : (
@@ -20,4 +20,4 @@ const WithMaxLuna = ({ children }: Props) => {
   )
 }
 
-export default WithMaxLuna
+export default WithMaxMXNC

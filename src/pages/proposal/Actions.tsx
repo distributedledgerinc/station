@@ -1,10 +1,11 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { DateTime } from 'luxon'
 import { useModal } from '../../hooks'
 import Modal from '../../components/Modal'
 import ActionBar from '../../components/ActionBar'
 import ButtonWithName from '../../components/ButtonWithName'
-import WithMaxLuna from '../../components/WithMaxLuna'
+import WithMaxMXNC from '../../components/WithMaxMXNC'
 import Deposit from './actions/Deposit'
 import Vote from './actions/Vote'
 
@@ -16,6 +17,8 @@ interface Props {
 
 const Component = ({ max, disabled, detail }: Props) => {
   const { id, status, deposit } = detail
+
+  const { t } = useTranslation()
   const modal = useModal()
 
   const buttons = {
@@ -36,7 +39,7 @@ const Component = ({ max, disabled, detail }: Props) => {
           )
         }
       >
-        Deposit
+        {t('Deposit')}
       </ButtonWithName>
     ),
     vote: (
@@ -50,7 +53,7 @@ const Component = ({ max, disabled, detail }: Props) => {
           )
         }
       >
-        Vote
+        {t('Vote')}
       </ButtonWithName>
     )
   }
@@ -69,11 +72,11 @@ const Component = ({ max, disabled, detail }: Props) => {
 }
 
 const Actions = (props: { detail: ProposalDetail }) => (
-  <WithMaxLuna>
+  <WithMaxMXNC>
     {(max, balance) => (
       <Component max={max} disabled={!balance.length} {...props} />
     )}
-  </WithMaxLuna>
+  </WithMaxMXNC>
 )
 
 export default Actions

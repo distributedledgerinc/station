@@ -12,7 +12,7 @@ const formatAmount = (amount: BigNumber.Value, p: number = 6): string =>
 
 const formatDenom = (denom: string): string => {
   const f = denom.slice(1)
-  return f && (f === 'luna' ? 'Luna' : f.slice(0, 2).toUpperCase() + 'T')
+  return f && (f === 'luna' ? 'MXNC' : f.slice(0, 2).toUpperCase() + 'T')
 }
 
 const formatCoin = ({ amount, denom }: Coin): string =>
