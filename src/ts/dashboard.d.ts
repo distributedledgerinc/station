@@ -13,6 +13,8 @@ interface CoinMap {
 
 interface Prices {
   ukrw: string
+  uusd: string
+  usdr: string
 }
 
 interface StakingPool {
