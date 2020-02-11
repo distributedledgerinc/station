@@ -23,17 +23,17 @@ const Component = ({ dashboard, onClickPrice }: Props) => {
     <div className="row">
       <div className="col col-20 col-full-1280">
         <Card
-          title="Luna price"
+          title="MXNC price"
           footer={
             <Badge small active>
-              {format.denom('ukrw')}
+              {format.denom('uusd')}
             </Badge>
           }
           onClick={onClickPrice}
           small
         >
-          <Amount denom="ukrw" fontSize={20}>
-            {times(prices.ukrw, 1e6)}
+          <Amount denom="uusd" fontSize={20}>
+            {times(prices.uusd, 1e6)}
           </Amount>
         </Card>
       </div>
